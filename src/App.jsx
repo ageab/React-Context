@@ -3,6 +3,7 @@ import { AppProvider } from "./context/app-context";
 import Setting from "./components/Setting";
 import DisplayTheme from "./components/DisplayTheme";
 import ToggleTheme from "./components/ToggleTheme";
+import { ThemeProvider } from "./context/theme-context";
 // import Reducer from "./components/Reducer";
 
 function App() {
@@ -11,12 +12,14 @@ function App() {
       <div className="relative">
         {/* <Reducer /> */}
         <AppProvider>
-          <Data />
-          <hr />
-          <Setting />
-          <hr />
-          <DisplayTheme />
-          <ToggleTheme />
+          <ThemeProvider>
+            <Data />
+            <hr />
+            <Setting />
+            <hr />
+            <DisplayTheme />
+            <ToggleTheme />
+          </ThemeProvider>
         </AppProvider>
       </div>
     </>
